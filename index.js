@@ -25,7 +25,7 @@ const searchCocktail = (e) => {
         )
           .then((res) => res.json())
           .then((data) => {
-            console.log(data)
+            // console.log(data)
       
         
             cocktailOutput.innerHTML = `<h2>Here is your ${searchInput}:</h2>`;
