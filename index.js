@@ -45,6 +45,8 @@ const searchCocktail = (e) => {
                         <div class="cocktail-info" data-cocktailID="${cocktail.idDrink}">
                             <h3>${cocktail.strDrink}</h3>
                             <h4>${cocktail.strCategory}</h4>
+                            <h5>${cocktail.strAlcoholic}</h5>
+                            <p class ="instructions"><span id='inst'>Instructions:</span> ${cocktail.strInstructions}</p>
                         </div>
     
                     </div>

@@ -62,7 +62,18 @@ body{
    
 
 }
+h1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:xx-large;
+    font-style:oblique;
+    animation: backwards;
+}
 h2{
     text-align: center;
+    text-transform: capitalize;
+    color:crimson;
 }
 
+h4{
+    color:red;
+}
