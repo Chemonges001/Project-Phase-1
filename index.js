@@ -3,6 +3,8 @@ const submit = document.getElementById('submit');
 
 const search = document.getElementById('search');
 
+const random = document.getElementById("random-search")
+
 const cocktailsElement = document.getElementById('cocktails');
 const cocktailOutput= document.getElementById('output-heading');
 const selectedCocktail = document.getElementById('selected-cocktail');
@@ -23,6 +25,7 @@ const searchCocktail = (e) => {
         )
           .then((res) => res.json())
           .then((data) => {
+            console.log(data)
       
         
             cocktailOutput.innerHTML = `<h2>Here is your ${searchInput}:</h2>`;
@@ -42,8 +45,6 @@ const searchCocktail = (e) => {
                         <div class="cocktail-info" data-cocktailID="${cocktail.idDrink}">
                             <h3>${cocktail.strDrink}</h3>
                             <h4>${cocktail.strCategory}</h4>
-                            <p class ="instructions"><span id='inst'>Instructions:</span> ${cocktail.strInstructions}</p>
-    
                         </div>
     
                     </div>
@@ -83,3 +84,8 @@ const searchCocktail = (e) => {
       }
       
     }
+
+   
+
+
+  
