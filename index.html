@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktails</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <section class="search-area">
+        <h1>Cocktail Corner</h1>
+        <div class="search-container flex">
+          <form class="flex" id="submit">
+            <input type="text" id="search" placeholder="Search cocktails ..."/>
+            <button class="search-btn" type="submit">search</button>
+          </form>
+          <button class ="random-search" type = 'submit'>random</button>
+
+        </div>
+      </section>
+  
+      <section class="output">
+        <div id="output-heading"></div>
+        <div id="cocktails" class="drinks"></div>
+        <div id="selected-cocktail"></div>
+      </section>
+
+      <script src = "./index.js"></script>
+</body>
+</html>
