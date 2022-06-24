@@ -62,4 +62,24 @@ const searchCocktail = (e) => {
         return 
       }
     };
-   
+    submit.addEventListener('submit', searchCocktail);
+
+
+    const getCocktailInfo = (e) => {
+      const cocktailInfo = e.path.find((item) => {
+       
+        if (item.classList) {
+          return item.classList.contains('cocktail-info');
+        } else {
+          return false;
+        }
+      });
+    
+      if (cocktailInfo) {
+     
+        const cocktailID = cocktailInfo.getAttribute('data-cocktailID');
+      
+        getCocktailInfo(cocktailID);
+      }
+      
+    }
