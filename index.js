@@ -17,4 +17,49 @@ const searchCocktail = (e) => {
   
    
     const searchInput = search.value;
+    if (searchInput) {
+        fetch(
+          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchInput}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+      
+        
+            cocktailOutput.innerHTML = `<h2>Here is your ${searchInput}:</h2>`;
+    
+           
+            if (data.drinks === null) {
+              cocktailsElement.innerHTML = '';
+              cocktailOutput.innerHTML = `<h2>No results for '${searchInput}'.</h2>`;
+    
+           
+            } else {
+              cocktailsElement.innerHTML = data.drinks
+                .map(
+                  (cocktail) => `
+                    <div class="drinks">
+                        <img src="${cocktail.strDrinkThumb}" alt= "${cocktail.strDrink}" />
+                        <div class="cocktail-info" data-cocktailID="${cocktail.idDrink}">
+                            <h3>${cocktail.strDrink}</h3>
+                            <h4>${cocktail.strCategory}</h4>
+                            <p class ="instructions"><span id='inst'>Instructions:</span> ${cocktail.strInstructions}</p>
+    
+                        </div>
+    
+                    </div>
+                    `
+                )
+                .join('');
+            }
+          });
+    
+        
+    
+        search.value = '';
+      } else {
+      
+        alert("INVALID REQUEST");
+        return 
+      }
+    };
    
